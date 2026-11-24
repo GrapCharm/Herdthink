@@ -24,9 +24,19 @@ class ChatPanel(BasePage):
         self.on_building_ui()
 
     def on_building_ui(self):
+        placeholder = PLACEHOLDER_TEXT
+        input_placeholder = "Type a message, use @WebSearch, or tag a file with @filename"
+        reasoning = self._app.default_settings.reasoning.settings["use"].value
+        if reasoning == "zhihu" and not KH_DEMO_MODE:
+            placeholder = (
+                "直接输入问题，搜索知乎并查看带来源的回答。\n"
+                "例如：为什么天空是蓝色的？"
+            )
+            input_placeholder = "输入你想在知乎了解的问题"
+
         self.chatbot = gr.Chatbot(
             label=self._app.app_name,
-            placeholder=PLACEHOLDER_TEXT,
+            placeholder=placeholder,
             show_label=False,
             elem_id="main-chat-bot",
             show_copy_button=True,
@@ -38,9 +48,7 @@ class ChatPanel(BasePage):
                 interactive=True,
                 scale=20,
                 file_count="multiple",
-                placeholder=(
-                    "Type a message, use @WebSearch, or tag a file with @filename"
-                ),
+                placeholder=input_placeholder,
                 container=False,
                 show_label=False,
                 elem_id="chat-input",

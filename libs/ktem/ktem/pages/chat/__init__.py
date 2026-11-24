@@ -490,7 +490,7 @@ class ChatPage(BasePage):
             )
             .success(
                 fn=self.check_and_suggest_name_conv,
-                inputs=self.chat_panel.chatbot,
+                inputs=[self.chat_panel.chatbot, self._reasoning_type, self._app.settings_state],
                 outputs=[
                     self.chat_control.conversation_rn,
                     self._conversation_renamed,
@@ -1407,7 +1407,10 @@ class ChatPage(BasePage):
                 chat_state,
             )
 
-    def check_and_suggest_name_conv(self, chat_history):
+    def check_and_suggest_name_conv(self, chat_history, reasoning_type, settings):
+        selected = settings["reasoning.use"] if reasoning_type in (None, DEFAULT_SETTING) else reasoning_type
+        if selected == "zhihu" and len(chat_history) == 1:
+            return gr.update(value=str(chat_history[0][0])[:40]), True
         suggest_pipeline = SuggestConvNamePipeline()
         new_name = gr.update()
         renamed = False

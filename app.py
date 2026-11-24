@@ -1,5 +1,7 @@
 import os
+from pathlib import Path
 
+from decouple import config
 from theflow.settings import settings as flowsettings
 
 KH_APP_DATA_DIR = getattr(flowsettings, "KH_APP_DATA_DIR", ".")
@@ -17,10 +19,13 @@ app = App()
 demo = app.make()
 demo.queue().launch(
     favicon_path=app._favicon,
-    inbrowser=True,
+    inbrowser=config("KH_OPEN_BROWSER", default=True, cast=bool),
     allowed_paths=[
         "libs/ktem/ktem/assets",
         GRADIO_TEMP_DIR,
+    ],
+    blocked_paths=[
+        str(Path(os.environ.get("ZHIHU_ENV_FILE", ".zhihu.env")).expanduser().resolve()),
     ],
     share=KH_GRADIO_SHARE,
 )

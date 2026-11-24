@@ -31,6 +31,8 @@ developers in mind.
 
 <!-- start-intro -->
 
+本仓库的知乎 S3 问答接入及开发环境配置见 [知乎问答开发指南](docs/zhihu-dev.md)。
+
 ## Introduction
 
 This project serves as a functional RAG UI for both end users who want to do QA on their

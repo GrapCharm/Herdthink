@@ -317,6 +317,7 @@ KH_RERANKINGS["cohere"] = {
 }
 
 KH_REASONINGS = [
+    "ktem.reasoning.zhihu.ZhihuQA",
     "ktem.reasoning.simple.FullQAPipeline",
     "ktem.reasoning.simple.FullDecomposeQAPipeline",
     "ktem.reasoning.react.ReactAgentPipeline",
