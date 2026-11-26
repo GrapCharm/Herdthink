@@ -2,7 +2,8 @@ import os
 from pathlib import Path
 
 from decouple import config
-from starlette.routing import Mount
+from starlette.routing import Mount, Route
+from explore_api import perspectives
 from starlette.staticfiles import StaticFiles
 from theflow.settings import settings as flowsettings
 
@@ -21,7 +22,7 @@ app = App()
 demo = app.make()
 explore_dir = Path(__file__).resolve().parent / "frontend" / "explore"
 demo.queue().launch(
-    app_kwargs={"routes": [Mount("/explore", app=StaticFiles(directory=explore_dir, html=True))]}
+    app_kwargs={"routes": [Route("/explore/api/perspectives", perspectives, methods=["POST"]), Mount("/explore", app=StaticFiles(directory=explore_dir, html=True))]}
     if explore_dir.is_dir() else {},
     favicon_path=app._favicon,
     inbrowser=config("KH_OPEN_BROWSER", default=True, cast=bool),

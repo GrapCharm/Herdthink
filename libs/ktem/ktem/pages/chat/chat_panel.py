@@ -33,7 +33,7 @@ class ChatPanel(BasePage):
                 "例如：为什么天空是蓝色的？"
             )
             input_placeholder = "输入你想在知乎了解的问题"
-            gr.Markdown("[打开平行视角 · 探索同一材料的不同解读](/explore/)")
+            gr.Markdown("[打开平行视角 · 从一个问题探索不同人生](/explore/)")
 
         self.chatbot = gr.Chatbot(
             label=self._app.app_name,
