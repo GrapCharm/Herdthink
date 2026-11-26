@@ -1,0 +1,58 @@
+{
+  "retrievedAt": "2026-11-26",
+  "source": "知乎站内搜索接口快照，summary 为检索摘要转述",
+  "topics": {
+    "ai": [
+      {
+        "id": "ai-1",
+        "angle": "评审负担",
+        "title": "AI编程几乎无成本产出代码,为什么程序员反而更要加班? - 知乎",
+        "author": "Jacky Yang",
+        "url": "https://www.zhihu.com/question/2063202774985217487/answer/2108244491018703482?utm_medium=openapi_platform&utm_source=b38f6831b176",
+        "summary": "作者说，生成代码以后仍要逐项检查模块复用和验收条件。团队产出变快时，负责审查的人数可能跟不上。"
+      },
+      {
+        "id": "ai-2",
+        "angle": "任务拆分",
+        "title": "AI编程几乎无成本产出代码,为什么程序员反而更要加班? - 知乎",
+        "author": "郭忠明",
+        "url": "https://www.zhihu.com/question/2063202774985217487/answer/2102854422867005505?utm_medium=openapi_platform&utm_source=b38f6831b176",
+        "summary": "作者建议一次只让模型处理一个小任务，每步运行测试，再由开发者阅读源码检查遗漏。"
+      },
+      {
+        "id": "ai-3",
+        "angle": "技能积累",
+        "title": "AI 时代的程序员,还应该努力写代码吗? - 知乎",
+        "author": "耐心等待",
+        "url": "https://www.zhihu.com/question/1976790644509909578/answer/2100720389315884342?utm_medium=openapi_platform&utm_source=b38f6831b176",
+        "summary": "作者把具体实现交给 AI，自己保留流程和框架设计，并强调开发者需要读懂生成的代码、纠正模型的理解偏差。"
+      }
+    ],
+    "phd": [
+      {
+        "id": "phd-1",
+        "angle": "科研兴趣",
+        "title": "读研方向上兴趣和就业哪个更重要? - 知乎",
+        "author": "不严肃的导员",
+        "url": "https://www.zhihu.com/question/2099933989398229496/answer/2102013937923396318?utm_medium=openapi_platform&utm_source=b38f6831b176",
+        "summary": "作者认为，走学术路线的人要考虑自己是否能长期承受实验失败与反馈迟缓；计划硕士毕业就业的人，则应把岗位选择面纳入比较。"
+      },
+      {
+        "id": "phd-2",
+        "angle": "机会成本",
+        "title": "普通人读博士的终局是什么? - 知乎",
+        "author": "Smooth澳研所",
+        "url": "https://www.zhihu.com/question/645681146/answer/2099803250178508635?utm_medium=openapi_platform&utm_source=b38f6831b176",
+        "summary": "作者提醒，估算读博放弃的收入和发展机会时，要比较自己当时能够获得的工作，而非照搬发展最顺利的同学的轨迹。"
+      },
+      {
+        "id": "phd-3",
+        "angle": "岗位匹配",
+        "title": "2026年国内博士就业形势如何? - 知乎",
+        "author": "骑着蜗牛看海",
+        "url": "https://www.zhihu.com/question/2012187228462396560/answer/2102396567235846509?utm_medium=openapi_platform&utm_source=b38f6831b176",
+        "summary": "作者认为，某些岗位看重独立解决新问题的能力；如果课题与企业需求脱节，博士研究经历也未必能直接转为岗位优势。"
+      }
+    ]
+  }
+}

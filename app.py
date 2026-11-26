@@ -2,6 +2,8 @@ import os
 from pathlib import Path
 
 from decouple import config
+from starlette.routing import Mount
+from starlette.staticfiles import StaticFiles
 from theflow.settings import settings as flowsettings
 
 KH_APP_DATA_DIR = getattr(flowsettings, "KH_APP_DATA_DIR", ".")
@@ -17,7 +19,10 @@ from ktem.main import App  # noqa
 
 app = App()
 demo = app.make()
+explore_dir = Path(__file__).resolve().parent / "frontend" / "explore"
 demo.queue().launch(
+    app_kwargs={"routes": [Mount("/explore", app=StaticFiles(directory=explore_dir, html=True))]}
+    if explore_dir.is_dir() else {},
     favicon_path=app._favicon,
     inbrowser=config("KH_OPEN_BROWSER", default=True, cast=bool),
     allowed_paths=[

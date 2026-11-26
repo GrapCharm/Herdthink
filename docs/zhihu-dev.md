@@ -47,6 +47,7 @@ ssh -NT -o ExitOnForwardFailure=yes -L 127.0.0.1:17860:127.0.0.1:7860 your-ssh-h
 
 ## 开发入口
 
+- 服务启动后，打开 `/explore/` 进入平行视角原型。前端位于 `frontend/explore/`，使用随仓库提供的知乎材料快照，观察档案保存在当前浏览器。范围见[首版需求](平行视角-首版需求.md)。
 - [问答实现](../libs/ktem/ktem/reasoning/zhihu.py)调用知乎搜索和直答，并将来源送到 Kotaemon 证据栏。
 - [应用配置](../flowsettings.py)注册并默认选中知乎问答流程。
 - 环境和本地数据分别保存在 `.venv/`、`.cache/` 和 `ktem_app_data/`。
